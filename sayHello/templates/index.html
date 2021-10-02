@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Say Hello</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"
+    </head>
+    <body>
+        <img src="https://www.globaltimes.cn/Portals/0//attachment/2015/2015-06-16/e991b503-ae89-4275-9d70-9d057c649b66.jpg">
+        <br>
+        <form action="greet" method="post">
+            {% for message in get_flashed_messages() %}
+                <p> {{message}} </p>
+            {% endfor %}
+            <br>
+            <input type="text" name="name_input">
+            <br>
+            <input type="submit" value="GREET" id="greet">
+        </form>
+    </body>
+</html>
